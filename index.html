@@ -11,9 +11,10 @@
     <meta property="og:title" content="Случайный выбор из списка | Рандомус">
     <meta property="og:type" content="website">
     <title>Случайный выбор из списка | Рандомус-JSA</title>
-       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css?17">
-    <link rel="stylesheet" href="./Случайный выбор из списка _ Рандомус_files/randomus.css">
-    <link rel="stylesheet" href="./Случайный выбор из списка _ Рандомус_files/rnd_common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css?17">
+    <!-- <link rel="stylesheet" href="./Случайный выбор из списка _ Рандомус_files/randomus.css">
+    <link rel="stylesheet" href="./Случайный выбор из списка _ Рандомус_files/rnd_common.css"> -->
+    <link rel="stylesheet" href="style.css">
             <link rel="icon" href="https://static.randomus.ru/static/resource/img/randomus_favicon.svg?17" type="image/svg+xml">
     <link rel="icon" sizes="32x32" href="https://static.randomus.ru/static/resource/img/randomus_favicon_32.png?17" type="image/png">
     <link rel="icon" sizes="192x192" href="https://static.randomus.ru/static/resource/img/randomus_favicon_192.png?17" type="image/png">
@@ -172,9 +173,7 @@
                 <p class="help mb-1">Одна запись в строке. Пустые строки игнорируются.</p>
             </div>
             <div class="field">
-                <div class="mb-1">
-                    <label class="label">Выбрать</label>
-                </div>
+                
                 <div class="field">
                     <div class="control">
                         <div class="control">
@@ -183,20 +182,8 @@
                                     <div class="level-item">
                                         <input id="count" class="input with_numeral" type="number" value="1" min="1" max="0" size="3" autocomplete="off" data-maxvalue="1000" data-label="num_label" required="">
                                     </div>
-                                    <div class="level-item ml-2"><span id="num_label" data-titles="запись,записи,записей">запись</span>
-                                    </div>
                                 </div>
                                 <div class="level-right is-flex-direction-row">
-                                    <div class="level-item">
-                                        <div class="control">
-                                            <a class="button is-text visible-switch" data-target="settings_div" title="Настройки (вкл/выкл)"><span class="icon"><svg class="svg-inline--fa fa-gear" aria-hidden="true" focusable="false" data-prefix="far" data-icon="gear" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 0c17 0 33.6 1.7 49.8 4.8c7.9 1.5 21.8 6.1 29.4 20.1c2 3.7 3.6 7.6 4.6 11.8l9.3 38.5C350.5 81 360.3 86.7 366 85l38-11.2c4-1.2 8.1-1.8 12.2-1.9c16.1-.5 27 9.4 32.3 15.4c22.1 25.1 39.1 54.6 49.9 86.3c2.6 7.6 5.6 21.8-2.7 35.4c-2.2 3.6-4.9 7-8 10L459 246.3c-4.2 4-4.2 15.5 0 19.5l28.7 27.3c3.1 3 5.8 6.4 8 10c8.2 13.6 5.2 27.8 2.7 35.4c-10.8 31.7-27.8 61.1-49.9 86.3c-5.3 6-16.3 15.9-32.3 15.4c-4.1-.1-8.2-.8-12.2-1.9L366 427c-5.7-1.7-15.5 4-16.9 9.8l-9.3 38.5c-1 4.2-2.6 8.2-4.6 11.8c-7.7 14-21.6 18.5-29.4 20.1C289.6 510.3 273 512 256 512s-33.6-1.7-49.8-4.8c-7.9-1.5-21.8-6.1-29.4-20.1c-2-3.7-3.6-7.6-4.6-11.8l-9.3-38.5c-1.4-5.8-11.2-11.5-16.9-9.8l-38 11.2c-4 1.2-8.1 1.8-12.2 1.9c-16.1 .5-27-9.4-32.3-15.4c-22-25.1-39.1-54.6-49.9-86.3c-2.6-7.6-5.6-21.8 2.7-35.4c2.2-3.6 4.9-7 8-10L53 265.7c4.2-4 4.2-15.5 0-19.5L24.2 218.9c-3.1-3-5.8-6.4-8-10C8 195.3 11 181.1 13.6 173.6c10.8-31.7 27.8-61.1 49.9-86.3c5.3-6 16.3-15.9 32.3-15.4c4.1 .1 8.2 .8 12.2 1.9L146 85c5.7 1.7 15.5-4 16.9-9.8l9.3-38.5c1-4.2 2.6-8.2 4.6-11.8c7.7-14 21.6-18.5 29.4-20.1C222.4 1.7 239 0 256 0zM218.1 51.4l-8.5 35.1c-7.8 32.3-45.3 53.9-77.2 44.6L97.9 120.9c-16.5 19.3-29.5 41.7-38 65.7l26.2 24.9c24 22.8 24 66.2 0 89L59.9 325.4c8.5 24 21.5 46.4 38 65.7l34.6-10.2c31.8-9.4 69.4 12.3 77.2 44.6l8.5 35.1c24.6 4.5 51.3 4.5 75.9 0l8.5-35.1c7.8-32.3 45.3-53.9 77.2-44.6l34.6 10.2c16.5-19.3 29.5-41.7 38-65.7l-26.2-24.9c-24-22.8-24-66.2 0-89l26.2-24.9c-8.5-24-21.5-46.4-38-65.7l-34.6 10.2c-31.8 9.4-69.4-12.3-77.2-44.6l-8.5-35.1c-24.6-4.5-51.3-4.5-75.9 0zM208 256a48 48 0 1 0 96 0 48 48 0 1 0 -96 0zm48 96a96 96 0 1 1 0-192 96 96 0 1 1 0 192z"></path></svg><!-- <i class="far fa-gear"></i> --></span> </a>
-                                        </div>
-                                    </div>
-                                    <div class="level-item">
-                                        <div class="control">
-                                            <a class="button is-text js-modal-trigger" data-target="protocol_form" title="Открыть протокол"><span class="icon"><svg class="svg-inline--fa fa-memo-circle-check" aria-hidden="true" focusable="false" data-prefix="far" data-icon="memo-circle-check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M64 48H320c8.8 0 16 7.2 16 16V220.5c14.6-9.5 30.8-17 48-21.8V64c0-35.3-28.7-64-64-64H64C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c3.3 0 6.6-.3 9.7-.7c-17.9-12.8-33.3-28.8-45.3-47.3H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16zm56 80c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm456 48a144 144 0 1 0 -288 0 144 144 0 1 0 288 0zm-76.7-43.3c6.2 6.2 6.2 16.4 0 22.6l-72 72c-6.2 6.2-16.4 6.2-22.6 0l-40-40c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L416 385.4l60.7-60.7c6.2-6.2 16.4-6.2 22.6 0z"></path></svg><!-- <i class="far fa-memo-circle-check"></i> --></span></a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -247,9 +234,9 @@
                 </div>
                 <hr>
             </div>
-            <div class="field mt-4">
-                <div class="control">
-                    <input type="submit" onclick="ShowLavr()" class="button is-medium is-fullwidth" id="send_button" disabled="1" style="background-color:red; color:white;" value="Уволить!">
+            <div class="">
+                <div class="">
+                    <input type="submit" onclick="ShowLavr()" class="button is-medium is-fullwidth" id="send_button" style="background-color:red; color:white;" value="Уволить!">
                 </div>
             </div>
         </form>
@@ -437,11 +424,9 @@
         </div>
     </footer>
     </div>
-    <script defer="" src="./Случайный выбор из списка _ Рандомус_files/short.js"></script>
-    <script defer="" src="./Случайный выбор из списка _ Рандомус_files/rnd_common.js"></script>
-    <script defer="" src="./Случайный выбор из списка _ Рандомус_files/interface.js"></script>
+    <!-- <script defer="" src="./Случайный выбор из списка _ Рандомус_files/interface.js"></script>
     <script defer="" src="./Случайный выбор из списка _ Рандомус_files/list.js" onload="create_list_object()"></script>
-
+ -->
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
